@@ -1,12 +1,11 @@
 {
-  "name": "amplify-app-site",
-  "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
   "devDependencies": {
     "commitizen": "^3.0.7",
     "cz-conventional-changelog": "^2.1.0",
@@ -21,8 +20,6 @@
   "scripts": {
     "bootstrap": "lerna bootstrap && lerna link",
     "clean": "rm -rf node_modules && lerna clean --yes && lerna run clean",
-    "lint": "eslint --fix 'packages/**/*.js'",
-    "precommit": "yarn lint",
     "commit": "git add . && git-cz"
   }
 }
