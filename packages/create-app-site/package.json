@@ -1,5 +1,5 @@
 {
-  "name": "build-script",
+  "name": "create-app-site",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -10,11 +10,14 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/harrysolovay/amplify-app-site.git",
-    "directory": "packages/build-script"
+    "directory": "packages/create-app-site"
   },
   "dependencies": {
     "aws-sdk": "^2.429.0",
-    "node-fetch": "^2.3.0",
-    "template": "^0.17.5"
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
+  },
+  "scripts": {
+    "clean": "rm -rf node_modules"
   }
 }

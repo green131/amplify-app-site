@@ -10,6 +10,10 @@
     "directory": "packages/example"
   },
   "dependencies": {
-    "build-script": "^1.0.0"
+    "create-app-site": "^1.0.0"
+  },
+  "scripts": {
+    "clean": "rm -rf node_modules",
+    "build": "node create-app-site.js tok_5xuvbrrakmp5m3p64b5hrecmrm"
   }
 }

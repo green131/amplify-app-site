@@ -34,3 +34,6 @@ actual.js
 # production
 lib
 build
+
+# sensitive
+packages/create-app-site/credentials.js
