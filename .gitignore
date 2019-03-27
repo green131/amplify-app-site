@@ -37,3 +37,6 @@ build
 
 # sensitive
 packages/create-app-site/credentials.js
+
+# generated
+generated

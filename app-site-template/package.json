@@ -1,7 +1,15 @@
 {
-  "name": "template",
+  "name": "app-site-template",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/harrysolovay/amplify-app-site.git",
+    "directory": "packages/app-site-template"
+  },
   "dependencies": {
     "react": "^16.8.5",
     "react-dom": "^16.8.5",

@@ -1,0 +1,37 @@
+{
+  "name": "app-site-template",
+  "version": "0.1.0",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/harrysolovay/amplify-app-site.git",
+    "directory": "packages/app-site-template"
+  },
+  "dependencies": {
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-scripts": "2.1.8",
+    "styled-components": "^4.2.0",
+    "styled-normalize": "^8.0.6"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "clean": "rm -rf node_modules"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "react-snap": "^1.23.0"
+  }
+}

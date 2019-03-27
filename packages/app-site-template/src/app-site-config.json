@@ -1,0 +1,13 @@
+{
+  "appName": "my app",
+  "tagline": "does something really awesome",
+  "device": {
+    "model": "iphone8",
+    "scale": "75",
+    "orientation": "portrait",
+    "color": "black"
+  },
+  "autoplay": true,
+  "language": "en",
+  "publicKey": "5n5de9vmfbq5rq7yej233ee2v0"
+}
