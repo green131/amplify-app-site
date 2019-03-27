@@ -13,6 +13,7 @@ const Placeholder = styled.div`
   height: 652.5px;
   background-color: #000;
   border-radius: 40px;
+  margin: 0px;
 `
 
 const EMBED_URL = `https://appetize.io/embed/${publicKey}?device=${

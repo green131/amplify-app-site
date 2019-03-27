@@ -12,6 +12,10 @@ const Container = styled.div`
     width: 100%;
     max-width: 1000px;
     margin: 0px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
   }
 `
 
@@ -19,14 +23,12 @@ const App = () => {
   return (
     <>
       <GlobalStyle />
-      <div>
-        <Header />
-        <Container>
-          <div>
-            <Simulator devMode />
-          </div>
-        </Container>
-      </div>
+      <Header />
+      <Container>
+        <div>
+          <Simulator />
+        </div>
+      </Container>
     </>
   )
 }

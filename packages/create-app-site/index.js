@@ -27,7 +27,9 @@ module.exports = async ({token, apkPath, ...config}) => {
   const credentials = new AWS.Credentials(...creds)
 
   const Bucket = 'hackathon-android-apk-hsolova'
-  const Key = 'APK'
+  const Key = 'APK.apk'
+
+  console.log('uploading apk')
 
   const s3 = new AWS.S3({region: 'us-west-2', credentials})
   const apk = readFileSync(absoluteApkPath)
@@ -51,6 +53,8 @@ module.exports = async ({token, apkPath, ...config}) => {
     )
   })
 
+  console.log('checking if project exists on Appetize')
+
   const existsResponse = await request.get(
     `https://${token}@api.appetize.io/v1/apps`,
   )
@@ -58,13 +62,14 @@ module.exports = async ({token, apkPath, ...config}) => {
   const {data: existsData} = existsParsed
 
   if (existsData.length) {
-    console.log('updating app')
+    console.log('updating project on Appetize')
+
     const [first] = existsData
     const {publicKey} = first
     await postToAppetize(signedUrl, token, publicKey)
     generate(projectPath, {...config, publicKey})
   } else {
-    console.log('creating app')
+    console.log('creating project on Appetize')
     const {publicKey} = await postToAppetize(signedUrl, token)
     generate(projectPath, {...config, publicKey})
   }
