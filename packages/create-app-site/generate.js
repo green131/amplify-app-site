@@ -9,15 +9,11 @@ module.exports = (appPath, config) => {
   )
   const actualTemplatePath = realpathSync(templatePath) // symlinked in dev
 
-  const destinationPath = join(appPath, 'generated/')
   const configDestinationPath = join(
-    destinationPath,
+    actualTemplatePath,
     'src/app-site-config.json',
   )
 
   console.log('generating website')
-  removeSync(destinationPath)
-  copySync(actualTemplatePath, destinationPath)
   writeJsonSync(configDestinationPath, config)
-  writeJsonSync(join(actualTemplatePath, 'src/app-site-config.json'), config) // keeps configs in sync in dev
 }
