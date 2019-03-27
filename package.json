@@ -7,8 +7,6 @@
     ]
   },
   "devDependencies": {
-    "commitizen": "^3.0.7",
-    "cz-conventional-changelog": "^2.1.0",
     "eslint": "^5.15.3",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^4.1.0",
@@ -18,8 +16,7 @@
     "prettier": "^1.16.4"
   },
   "scripts": {
-    "bootstrap": "lerna bootstrap && lerna link",
     "clean": "rm -rf node_modules && lerna clean --yes && lerna run clean",
-    "commit": "git add . && git-cz"
+    "bootstrap": "lerna bootstrap && lerna link"
   }
 }
