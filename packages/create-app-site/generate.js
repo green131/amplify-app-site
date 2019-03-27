@@ -3,7 +3,10 @@ const {join} = require('path')
 const {realpathSync} = require('fs')
 
 module.exports = (appPath, config) => {
-  const templatePath = join(__dirname, 'node_modules/app-site-template')
+  const templatePath = join(
+    __dirname,
+    'node_modules/@aws-hackathon-2019-app-site-generator/app-site-template',
+  )
   const actualTemplatePath = realpathSync(templatePath) // symlinked in dev
 
   const destinationPath = join(appPath, 'generated/')

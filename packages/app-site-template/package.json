@@ -1,5 +1,5 @@
 {
-  "name": "app-site-template",
+  "name": "@aws-hackathon-2019-app-site-generator/app-site-template",
   "version": "0.1.0",
   "private": false,
   "publishConfig": {

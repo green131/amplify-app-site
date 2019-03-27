@@ -1,4 +1,4 @@
-require('create-app-site')({
+require('@aws-hackathon-2019-app-site-generator/create-app-site')({
   token: process.env.APPETIZE_TOKEN || process.argv.pop(),
   apkPath: 'app-debug.apk',
   appName: 'my app',
