@@ -1,5 +1,5 @@
 require('create-app-site')({
-  token: process.argv.pop(),
+  token: process.env.APPETIZE_TOKEN || process.argv.pop(),
   apkPath: 'app-debug.apk',
   appName: 'my app',
   tagline: 'does something really awesome',

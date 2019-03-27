@@ -31,7 +31,10 @@ module.exports = async ({token, apkPath, ...config}) => {
 
   console.log('uploading apk')
 
-  const s3 = new AWS.S3({region: 'us-west-2', credentials})
+  const s3 = new AWS.S3({
+    region: 'us-west-2',
+    ...[process.env.NODE_ENV === 'development' ? {credentials} : {}],
+  })
   const apk = readFileSync(absoluteApkPath)
 
   const signedUrl = await new Promise(resolve => {
