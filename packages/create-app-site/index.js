@@ -1,6 +1,5 @@
 const {join} = require('path')
 const AWS = require('aws-sdk')
-const creds = require('./credentials')
 const {readFileSync} = require('fs')
 const request = require('request-promise')
 const generate = require('./generate')
@@ -24,7 +23,7 @@ module.exports = async ({token, apkPath, ...config}) => {
   const projectPath = join(parent, '..')
   const absoluteApkPath = join(projectPath, apkPath)
 
-  const credentials = new AWS.Credentials(...creds)
+  // const credentials = keys ? new AWS.Credentials(...creds) : false
 
   const Bucket = 'hackathon-android-apk-hsolova'
   const Key = 'APK.apk'
@@ -33,8 +32,8 @@ module.exports = async ({token, apkPath, ...config}) => {
 
   const s3 = new AWS.S3({
     region: 'us-west-2',
-    ...[process.env.NODE_ENV === 'development' ? {credentials} : {}],
   })
+
   const apk = readFileSync(absoluteApkPath)
 
   const signedUrl = await new Promise(resolve => {
