@@ -3,10 +3,23 @@ const AWS = require('aws-sdk')
 const creds = require('./credentials')
 const {readFileSync} = require('fs')
 const request = require('request-promise')
+const generate = require('./generate')
 
-module.exports = async args => {
-  const {token, apkPath} = args
+const postToAppetize = (signedUrl, token, publicKey) =>
+  request.post(
+    `https://${token}@api.appetize.io/v1/apps${
+      publicKey ? `/${publicKey}` : ''
+    }`,
+    {
+      body: {
+        url: signedUrl,
+        platform: 'android',
+      },
+      json: true,
+    },
+  )
 
+module.exports = async ({token, apkPath, ...config}) => {
   const {filename: parent} = module.parent
   const projectPath = join(parent, '..')
   const absoluteApkPath = join(projectPath, apkPath)
@@ -14,7 +27,9 @@ module.exports = async args => {
   const credentials = new AWS.Credentials(...creds)
 
   const Bucket = 'hackathon-android-apk-hsolova'
-  const Key = 'APK'
+  const Key = 'APK.apk'
+
+  console.log('uploading apk')
 
   const s3 = new AWS.S3({region: 'us-west-2', credentials})
   const apk = readFileSync(absoluteApkPath)
@@ -38,6 +53,8 @@ module.exports = async args => {
     )
   })
 
+  console.log('checking if project exists on Appetize')
+
   const existsResponse = await request.get(
     `https://${token}@api.appetize.io/v1/apps`,
   )
@@ -45,36 +62,15 @@ module.exports = async args => {
   const {data: existsData} = existsParsed
 
   if (existsData.length) {
-    console.log('updating app')
+    console.log('updating project on Appetize')
 
     const [first] = existsData
     const {publicKey} = first
-    const updatedResponse = await request.post(
-      `https://${token}@api.appetize.io/v1/apps/${publicKey}`,
-      {
-        body: {
-          url: signedUrl,
-          platform: 'android',
-        },
-        json: true,
-      },
-    )
-
-    console.log(updatedResponse)
+    await postToAppetize(signedUrl, token, publicKey)
+    generate(projectPath, {...config, publicKey})
   } else {
-    console.log('creating app')
-
-    const createdResponse = await request.post(
-      `https://${token}@api.appetize.io/v1/apps`,
-      {
-        body: {
-          url: signedUrl,
-          platform: 'android',
-        },
-        json: true,
-      },
-    )
-
-    console.log(createdResponse)
+    console.log('creating project on Appetize')
+    const {publicKey} = await postToAppetize(signedUrl, token)
+    generate(projectPath, {...config, publicKey})
   }
 }
