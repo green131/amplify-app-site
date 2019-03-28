@@ -20,7 +20,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "clean": "rm -rf node_modules"
+    "clean": "rm -rf node_modules",
+    "postbuild": "react-snap"
+  },
+  "reactSnap": {
+    "inlineCss": true
   },
   "eslintConfig": {
     "extends": "react-app"
