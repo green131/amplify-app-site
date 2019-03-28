@@ -1,6 +1,6 @@
 require('@aws-hackathon-2019-app-site-generator/create-app-site')({
   token: process.env.APPETIZE_TOKEN || process.argv.pop(),
-  apkPath: 'app-debug.apk',
+  apkPath: 'source/app/build/outputs/apk/debug/app-debug.apk',
   appName: 'my app',
   tagline: 'does something really awesome',
   device: {
