@@ -26,7 +26,7 @@ const App = () => {
       <Header />
       <Container>
         <div>
-          <Simulator devMode />
+          <Simulator />
         </div>
         <DownloadButton />
       </Container>
