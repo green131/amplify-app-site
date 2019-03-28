@@ -4,7 +4,7 @@ require('@aws-hackathon-2019-app-site-generator/create-app-site')({
   appName: 'my app',
   tagline: 'does something really awesome',
   device: {
-    model: 'iphone8',
+    model: 'nexus5',
     scale: '75',
     orientation: 'portrait',
     color: 'black',
