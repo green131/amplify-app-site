@@ -1,5 +1,5 @@
 {
-  "name": "example",
+  "name": "@aws-hackathon-2019-app-site-generator/hackathon-example",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -10,10 +10,10 @@
     "directory": "packages/example"
   },
   "dependencies": {
-    "create-app-site": "^1.0.0"
+    "@aws-hackathon-2019-app-site-generator/create-app-site": "^1.0.0"
   },
   "scripts": {
     "clean": "rm -rf node_modules",
-    "build": "node create-app-site.js tok_5xuvbrrakmp5m3p64b5hrecmrm"
+    "build": "node create-app-site.js tok_5t1mr3n7y5dae6qv8ecnn356t4"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "create-app-site",
+  "name": "@aws-hackathon-2019-app-site-generator/create-app-site",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -13,7 +13,7 @@
     "directory": "packages/create-app-site"
   },
   "dependencies": {
-    "app-site-template": "^0.1.0",
+    "@aws-hackathon-2019-app-site-generator/app-site-template": "^0.1.0",
     "aws-sdk": "^2.429.0",
     "fs-extra": "^7.0.1",
     "request": "^2.88.0",
