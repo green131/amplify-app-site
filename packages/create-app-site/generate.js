@@ -16,4 +16,9 @@ module.exports = (appPath, config) => {
 
   console.log('generating website')
   writeJsonSync(configDestinationPath, config)
+  removeSync(join(templatePath, 'src/assets/apk.js'))
+  copySync(
+    join(appPath, 'source/app/build/outputs/apk/debug/app-debug.apk'),
+    join(templatePath, 'src/assets/app-debug.apk'),
+  )
 }

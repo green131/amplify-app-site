@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import {GlobalStyle, Header, Simulator} from './components'
+import {GlobalStyle, Header, Simulator, DownloadButton} from './components'
 import {render} from 'react-dom'
 import * as serviceWorker from './utils/serviceWorker'
 
@@ -26,8 +26,9 @@ const App = () => {
       <Header />
       <Container>
         <div>
-          <Simulator />
+          <Simulator devMode />
         </div>
+        <DownloadButton />
       </Container>
     </>
   )
