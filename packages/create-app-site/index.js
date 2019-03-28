@@ -23,7 +23,7 @@ module.exports = async ({token, apkPath, ...config}) => {
     const {filename: parent} = module.parent
     const projectPath = join(parent, '..')
     const absoluteApkPath = join(projectPath, apkPath)
-    const Bucket = 'hackathon-android-apk-hsolova'
+    const Bucket = 'hackathon-amplify-app-bucket'
     const Key = 'APK.apk'
 
     console.log('uploading apk')
