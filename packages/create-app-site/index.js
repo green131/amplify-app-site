@@ -69,11 +69,13 @@ module.exports = async ({token, apkPath, ...config}) => {
 
       const [first] = existsData
       const {publicKey} = first
-      await postToAppetize(signedUrl, token, publicKey)
+      const appetizeResponse = await postToAppetize(signedUrl, token, publicKey)
+      console.log(appetizeResponse)
       generate(projectPath, {...config, publicKey})
     } else {
       console.log('creating project on Appetize')
-      const {publicKey} = await postToAppetize(signedUrl, token)
+      const appetizeResponse = await postToAppetize(signedUrl, token)
+      const {publicKey} = appetizeResponse
       generate(projectPath, {...config, publicKey})
     }
   } catch (e) {
