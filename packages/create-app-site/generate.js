@@ -18,7 +18,7 @@ module.exports = (appPath, config) => {
   writeJsonSync(configDestinationPath, config)
   removeSync(join(templatePath, 'src/assets/apk.js'))
   copySync(
-    join(appPath, 'source/app/build/outputs/apk/debug/app-debug.apk'),
-    join(templatePath, 'src/assets/app-debug.apk'),
+    join(appPath, 'source/app/build/outputs/apk/debug/calendar-debug.apk'),
+    join(templatePath, 'src/assets/app.apk'),
   )
 }
