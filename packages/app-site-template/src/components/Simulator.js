@@ -22,7 +22,7 @@ const EMBED_URL = `https://appetize.io/embed/${publicKey}?device=${
   device.orientation
 }&deviceColor=${device.color}&language=${language || 'en'}&centered=${
   device.centered
-}&grantPermissions=true&debug=true`
+}&grantPermissions=true`
 
 export default ({devMode}) =>
   devMode ? (
