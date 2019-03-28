@@ -23,9 +23,6 @@ module.exports = async ({token, apkPath, ...config}) => {
     const {filename: parent} = module.parent
     const projectPath = join(parent, '..')
     const absoluteApkPath = join(projectPath, apkPath)
-
-    // const credentials = keys ? new AWS.Credentials(...creds) : false
-
     const Bucket = 'hackathon-android-apk-hsolova'
     const Key = 'APK.apk'
 
