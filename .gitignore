@@ -35,8 +35,5 @@ actual.js
 lib
 build
 
-# sensitive
-packages/create-app-site/credentials.js
-
 # generated
 generated
