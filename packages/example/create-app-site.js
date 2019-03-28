@@ -8,6 +8,7 @@ require('@aws-hackathon-2019-app-site-generator/create-app-site')({
     scale: '75',
     orientation: 'portrait',
     color: 'black',
+    centered: true,
   },
   autoplay: true,
   language: 'en',
