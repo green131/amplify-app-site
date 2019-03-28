@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {GlobalStyle, Header, Simulator} from './components'
-import {hydrate, render} from 'react-dom'
+import {render} from 'react-dom'
 import * as serviceWorker from './utils/serviceWorker'
 
 const Container = styled.div`
@@ -33,8 +33,5 @@ const App = () => {
   )
 }
 
-const rootElement = document.getElementById('root')
-const renderer = rootElement.hasChildNodes() ? hydrate : render
-renderer(<App />, rootElement)
-
+render(<App />, document.getElementById('root'))
 serviceWorker.unregister()

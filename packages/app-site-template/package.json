@@ -20,11 +20,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "clean": "rm -rf node_modules",
-    "postbuild": "react-snap"
-  },
-  "reactSnap": {
-    "inlineCss": true
+    "clean": "rm -rf node_modules"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -34,8 +30,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "devDependencies": {
-    "react-snap": "^1.23.0"
-  }
+  ]
 }
