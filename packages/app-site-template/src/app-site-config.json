@@ -5,9 +5,10 @@
     "model": "nexus5",
     "scale": "75",
     "orientation": "portrait",
-    "color": "black"
+    "color": "black",
+    "centered": true
   },
   "autoplay": true,
   "language": "en",
-  "publicKey": "w1zc7gpu377xkpj70fzct502yw"
+  "publicKey": "fxp77q71qr6t3epmy2eg3wk83m"
 }
